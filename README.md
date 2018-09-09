@@ -2,7 +2,7 @@
 
 Download photos from Instagram, the fastest way. [Website](http://danielecampogiani.com/InstaToolsSite/)
 
-<img src="http://danielecampogiani.com/InstaToolsSite/images/demo.gif" width="250"> 
+<img src="https://github.com/dcampogiani/InstaTools/blob/master/demo.gif?raw=true" width="250"> 
 
 ## Download
 
