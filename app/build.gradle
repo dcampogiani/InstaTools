@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "com.github.ben-manes.versions"
+
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.danielecampogiani.instatools"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "0.0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    implementation "com.android.support:appcompat-v7:${versions.support_library}"
+    implementation "com.android.support:palette-v7:${versions.support_library}"
+    implementation "com.android.support:design:${versions.support_library}"
+    implementation "com.android.support.constraint:constraint-layout:${versions.constraint_layout}"
+    implementation "android.arch.lifecycle:extensions:${versions.arch_comp}"
+    kapt "android.arch.lifecycle:compiler:${versions.arch_comp}"
+    implementation "com.google.dagger:dagger:${versions.dagger}"
+    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
+    implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
+    implementation "io.reactivex.rxjava2:rxjava:${versions.rxjava}"
+    implementation "io.arrow-kt:arrow-core:${versions.arrow}"
+    implementation "io.arrow-kt:arrow-data:${versions.arrow}"
+    implementation "io.arrow-kt:arrow-instances-data:${versions.arrow}"
+    kapt "io.arrow-kt:arrow-annotations-processor:${versions.arrow}"
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    kapt "com.github.bumptech.glide:compiler:${versions.glide}"
+    implementation "com.github.chrisbanes:PhotoView:${versions.photoview}"
+    implementation "com.github.medyo:android-about-page:${versions.androidabout}"
+    implementation "com.romandanylyk:pageindicatorview:${versions.pageindicatorview}"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:${versions.espresso}", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.mockitokotlin}"
+    testImplementation "org.robolectric:robolectric:${versions.robolectric}"
+}
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}

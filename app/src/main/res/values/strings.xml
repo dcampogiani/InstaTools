@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Insta Tools</string>
+
+    <string name="input_hint_post_link">Post Link</string>
+    <string name="button_get">Get</string>
+    <string name="error_invalid_input">Invalid Input</string>
+    <string name="error_no_network">No network data</string>
+    <string name="error_could_not_find_link">Could not find photo</string>
+
+    <string name="button_download">Download</string>
+    <string name="notify_download_started">Download started</string>
+    <string name="notify_download_needs_permission">App needs storage permission</string>
+    <string name="settings">Settings</string>
+
+    <string name="about">About</string>
+    <string name="how_to_use">How To Use</string>
+
+</resources>
