@@ -6,7 +6,7 @@ Download photos from Instagram, the fastest way. [Website](http://danielecampogi
 
 ## Download
 
-* TODO: add release on github
+* [APK](https://github.com/dcampogiani/InstaTools/releases/download/0.0.1/app-debug.apk)
 
 ## Building
 To build a debug version, run this from the root of the project:
