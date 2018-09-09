@@ -9,7 +9,7 @@ import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
 class PostDetailViewModel @Inject constructor(
-        private val downloadUseCase: DownloadUseCase
+    private val downloadUseCase: DownloadUseCase
 ) : ViewModel() {
 
     private val disposables = CompositeDisposable()
@@ -25,7 +25,7 @@ class PostDetailViewModel @Inject constructor(
 
     fun download(imageUrl: String) {
         val detailState = downloadUseCase.downloadPost(imageUrl)
-                .fold({ PostDetailState.PermissionError }, { PostDetailState.DownloadStarted })
+            .fold({ PostDetailState.PermissionError }, { PostDetailState.DownloadStarted })
         mutableLiveData.value = Event(detailState)
     }
 }

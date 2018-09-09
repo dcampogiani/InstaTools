@@ -4,9 +4,8 @@ import com.danielecampogiani.instatools.shared.validate
 import javax.inject.Inject
 
 class GetClipDataUseCaseImpl @Inject constructor(
-        private val clipManager: ClipManager
+    private val clipManager: ClipManager
 ) : GetClipDataUseCase {
-
 
     override fun run(): String? {
         val currentValue = clipManager.currentValue?.toString()

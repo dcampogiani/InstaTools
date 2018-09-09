@@ -10,7 +10,8 @@ import okhttp3.OkHttpClient
 import javax.inject.Inject
 
 class GetDirectLinkUseCaseImpl @Inject constructor(
-        private val okHttpClient: OkHttpClient) : GetDirectLinkUseCase {
+    private val okHttpClient: OkHttpClient
+) : GetDirectLinkUseCase {
 
     override fun run(shareUrl: String): Single<Either<GetDirectLinkUseCase.Error, GetDirectLinkUseCase.Result>> {
         return Single.fromCallable { blockingRun(shareUrl) }

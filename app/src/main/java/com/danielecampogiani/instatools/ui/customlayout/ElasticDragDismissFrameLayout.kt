@@ -29,8 +29,10 @@ import java.util.ArrayList
  * Applies an elasticity factor to reduce movement as you approach the given dismiss distance.
  * Optionally also scales down content during drag.
  */
-class ElasticDragDismissFrameLayout @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0, defStyleRes: Int = 0) : FrameLayout(context, attrs, defStyleAttr, defStyleRes) {
+class ElasticDragDismissFrameLayout @JvmOverloads constructor(
+    context: Context, attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0, defStyleRes: Int = 0
+) : FrameLayout(context, attrs, defStyleAttr, defStyleRes) {
 
     // configurable attribs
     private var dragDismissDistance = java.lang.Float.MAX_VALUE
@@ -50,23 +52,32 @@ class ElasticDragDismissFrameLayout @JvmOverloads constructor(context: Context, 
     init {
 
         val a = getContext().obtainStyledAttributes(
-            attrs, R.styleable.ElasticDragDismissFrameLayout, 0, 0)
+            attrs, R.styleable.ElasticDragDismissFrameLayout, 0, 0
+        )
 
         if (a.hasValue(R.styleable.ElasticDragDismissFrameLayout_dragDismissDistance)) {
-            dragDismissDistance = a.getDimensionPixelSize(R.styleable
-                .ElasticDragDismissFrameLayout_dragDismissDistance, 0).toFloat()
+            dragDismissDistance = a.getDimensionPixelSize(
+                R.styleable
+                    .ElasticDragDismissFrameLayout_dragDismissDistance, 0
+            ).toFloat()
         } else if (a.hasValue(R.styleable.ElasticDragDismissFrameLayout_dragDismissFraction)) {
-            dragDismissFraction = a.getFloat(R.styleable
-                .ElasticDragDismissFrameLayout_dragDismissFraction, dragDismissFraction)
+            dragDismissFraction = a.getFloat(
+                R.styleable
+                    .ElasticDragDismissFrameLayout_dragDismissFraction, dragDismissFraction
+            )
         }
         if (a.hasValue(R.styleable.ElasticDragDismissFrameLayout_dragDismissScale)) {
-            dragDismissScale = a.getFloat(R.styleable
-                .ElasticDragDismissFrameLayout_dragDismissScale, dragDismissScale)
+            dragDismissScale = a.getFloat(
+                R.styleable
+                    .ElasticDragDismissFrameLayout_dragDismissScale, dragDismissScale
+            )
             shouldScale = dragDismissScale != 1f
         }
         if (a.hasValue(R.styleable.ElasticDragDismissFrameLayout_dragElasticity)) {
-            dragElacticity = a.getFloat(R.styleable.ElasticDragDismissFrameLayout_dragElasticity,
-                dragElacticity)
+            dragElacticity = a.getFloat(
+                R.styleable.ElasticDragDismissFrameLayout_dragElasticity,
+                dragElacticity
+            )
         }
         a.recycle()
     }
@@ -84,8 +95,10 @@ class ElasticDragDismissFrameLayout @JvmOverloads constructor(context: Context, 
          * dismiss distance has been reached.
          * @param rawOffsetPixels     The raw distance the user has dragged
          */
-        internal open fun onDrag(elasticOffset: Float, elasticOffsetPixels: Float,
-            rawOffset: Float, rawOffsetPixels: Float) {
+        internal open fun onDrag(
+            elasticOffset: Float, elasticOffsetPixels: Float,
+            rawOffset: Float, rawOffsetPixels: Float
+        ) {
         }
 
         /**
@@ -106,8 +119,10 @@ class ElasticDragDismissFrameLayout @JvmOverloads constructor(context: Context, 
         }
     }
 
-    override fun onNestedScroll(target: View, dxConsumed: Int, dyConsumed: Int,
-        dxUnconsumed: Int, dyUnconsumed: Int) {
+    override fun onNestedScroll(
+        target: View, dxConsumed: Int, dyConsumed: Int,
+        dxUnconsumed: Int, dyUnconsumed: Int
+    ) {
         dragScale(dyUnconsumed)
     }
 
@@ -211,16 +226,22 @@ class ElasticDragDismissFrameLayout @JvmOverloads constructor(context: Context, 
             scaleX = 1f
             scaleY = 1f
         }
-        dispatchDragCallback(dragFraction, dragTo,
-            Math.min(1f, Math.abs(totalDrag) / dragDismissDistance), totalDrag)
+        dispatchDragCallback(
+            dragFraction, dragTo,
+            Math.min(1f, Math.abs(totalDrag) / dragDismissDistance), totalDrag
+        )
     }
 
-    private fun dispatchDragCallback(elasticOffset: Float, elasticOffsetPixels: Float,
-        rawOffset: Float, rawOffsetPixels: Float) {
+    private fun dispatchDragCallback(
+        elasticOffset: Float, elasticOffsetPixels: Float,
+        rawOffset: Float, rawOffsetPixels: Float
+    ) {
         if (callbacks != null && !callbacks!!.isEmpty()) {
             for (callback in callbacks!!) {
-                callback.onDrag(elasticOffset, elasticOffsetPixels,
-                    rawOffset, rawOffsetPixels)
+                callback.onDrag(
+                    elasticOffset, elasticOffsetPixels,
+                    rawOffset, rawOffsetPixels
+                )
             }
         }
     }

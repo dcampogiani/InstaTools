@@ -4,7 +4,6 @@ import arrow.core.Either
 
 private val regex = """."display_url":"([^"]*)""".toRegex()
 
-
 fun parseDirectLinks(html: String): Either<GetDirectLinkUseCase.Error, GetDirectLinkUseCase.Result> {
 
     val regexResult = regex.findAll(html)

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright 2015 Google Inc.
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,10 +17,10 @@
 <resources>
 
     <declare-styleable name="ElasticDragDismissFrameLayout">
-        <attr name="dragDismissDistance" format="dimension"/>
-        <attr name="dragDismissFraction" format="float"/>
-        <attr name="dragDismissScale" format="float"/>
-        <attr name="dragElasticity" format="float"/>
+        <attr name="dragDismissDistance" format="dimension" />
+        <attr name="dragDismissFraction" format="float" />
+        <attr name="dragDismissScale" format="float" />
+        <attr name="dragElasticity" format="float" />
     </declare-styleable>
 
 </resources>

@@ -12,8 +12,13 @@ class ParserKtTest {
         val directLinks = com.danielecampogiani.instatools.getdirectlink.usecase.parseDirectLinks(SINGLE_POST_HTML)
 
         directLinks.fold(
-                { fail() },
-                { assertEquals(GetDirectLinkUseCase.Result.SinglePhoto("https://scontent-mxp1-1.cdninstagram.com/vp/4c44a0c2e95b0c916dc34dba56392c2b/5B7E8EF5/t51.2885-15/e35/31421812_1813815908922187_183717513849208832_n.jpg"), it) }
+            { fail() },
+            {
+                assertEquals(
+                    GetDirectLinkUseCase.Result.SinglePhoto("https://scontent-mxp1-1.cdninstagram.com/vp/4c44a0c2e95b0c916dc34dba56392c2b/5B7E8EF5/t51.2885-15/e35/31421812_1813815908922187_183717513849208832_n.jpg"),
+                    it
+                )
+            }
         )
     }
 
@@ -23,14 +28,18 @@ class ParserKtTest {
         val directLinks = com.danielecampogiani.instatools.getdirectlink.usecase.parseDirectLinks(MULTIPLE_POST_HTML)
 
         directLinks.fold(
-                { fail() },
-                {
-                    assertEquals(GetDirectLinkUseCase.Result.MultiplePhotos(listOf(
+            { fail() },
+            {
+                assertEquals(
+                    GetDirectLinkUseCase.Result.MultiplePhotos(
+                        listOf(
                             "https://scontent-mxp1-1.cdninstagram.com/vp/45552ea053442f3ed2cc04ce70a3030f/5BD6B6D0/t51.2885-15/e35/36113472_1835446843180291_3453440790187999232_n.jpg",
                             "https://scontent-mxp1-1.cdninstagram.com/vp/83e4e58be2c9d497a207c28f76b16505/5BD24E05/t51.2885-15/e35/35278952_244351252820597_6395226090658332672_n.jpg",
                             "https://scontent-mxp1-1.cdninstagram.com/vp/fda71289795bd83abf6f4d3f8ec51844/5BC69DF2/t51.2885-15/e35/36147967_362718267589296_8121448192236584960_n.jpg"
-                    )), it)
-                }
+                        )
+                    ), it
+                )
+            }
         )
     }
 }

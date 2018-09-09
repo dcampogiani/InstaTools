@@ -10,5 +10,5 @@ class AndroidModule {
 
     @Provides
     fun provideClipboardManager(context: Context): ClipboardManager =
-            context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
 }

@@ -34,5 +34,4 @@ class MultiplePostFragment : Fragment() {
         val urls = arguments!!.getStringArrayList(URLS)
         pager.adapter = MultiplePostAdapter(urls, childFragmentManager)
     }
-
 }

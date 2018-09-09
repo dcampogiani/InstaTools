@@ -13,7 +13,7 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val useCase: GetDirectLinkUseCase,
     private val getClipDataUseCase: GetClipDataUseCase
-    ) : ViewModel() {
+) : ViewModel() {
 
     private val disposables = CompositeDisposable()
 

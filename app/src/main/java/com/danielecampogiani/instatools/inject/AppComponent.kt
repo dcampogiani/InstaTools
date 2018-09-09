@@ -11,17 +11,19 @@ import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [
-    AppModule::class,
-    AndroidModule::class,
-    ViewModelBuilder::class,
-    NetworkModule::class,
-    MainModule::class,
-    PostDetailModule::class,
-    GetClipDataModule::class,
-    GetDirectLinkModule::class,
-    DownloadModule::class
-])
+@Component(
+    modules = [
+        AppModule::class,
+        AndroidModule::class,
+        ViewModelBuilder::class,
+        NetworkModule::class,
+        MainModule::class,
+        PostDetailModule::class,
+        GetClipDataModule::class,
+        GetDirectLinkModule::class,
+        DownloadModule::class
+    ]
+)
 interface AppComponent {
 
     fun inject(mainFragment: MainFragment)

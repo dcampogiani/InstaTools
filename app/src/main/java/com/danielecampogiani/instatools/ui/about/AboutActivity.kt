@@ -14,14 +14,14 @@ class AboutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val aboutPage = AboutPage(this)
-                .setDescription(getString(R.string.app_name))
-                .isRTL(false)
-                .setImage(R.mipmap.ic_launcher)
-                .addEmail("daniele.campogiani.dev@gmail.com")
-                .addItem(getHowToUse())
-                .addWebsite("http://danielecampogiani.com/InstaToolsSite/")
-                .addInstagram("dcampogiani")
-                .create()
+            .setDescription(getString(R.string.app_name))
+            .isRTL(false)
+            .setImage(R.mipmap.ic_launcher)
+            .addEmail("daniele.campogiani.dev@gmail.com")
+            .addItem(getHowToUse())
+            .addWebsite("http://danielecampogiani.com/InstaToolsSite/")
+            .addInstagram("dcampogiani")
+            .create()
 
         setContentView(aboutPage)
     }
